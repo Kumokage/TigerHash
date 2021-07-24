@@ -13,7 +13,6 @@ jobs:
       matrix:
         python-version: [3.9]
         platform: [
-          { os: "ubuntu-latest",  python-architecture: "x64"},
           { os: "macOS-latest",   python-architecture: "x64"},
           { os: "windows-latest", python-architecture: "x64"},
           { os: "windows-latest", python-architecture: "x86"},
