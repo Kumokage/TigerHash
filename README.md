@@ -1,4 +1,4 @@
-# TigerHash [![PyPI version](https://pypi.org/project/tigerhash/)](https://pypi.org/project/tigerhash/) [![test](https://github.com/Badcat330/TigerHash/actions/workflows/test.yml/badge.svg)](https://github.com/Badcat330/TigerHash/actions/workflows/test.yml)
+# TigerHash [![PyPI version](https://badge.fury.io/py/tigerhash.svg)](https://badge.fury.io/py/tigerhash) [![test](https://github.com/Badcat330/TigerHash/actions/workflows/test.yml/badge.svg)](https://github.com/Badcat330/TigerHash/actions/workflows/test.yml)
 
 Implementation of tiger hash in C++ with Python API. 
 The basic API matches that of Python's standard [`hashlib`](https://docs.python.org/3/library/hashlib.html) module. 
