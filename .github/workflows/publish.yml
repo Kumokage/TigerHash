@@ -2,7 +2,7 @@ name: publish
 
 on:
   release:
-    types: [published]
+    types: [published, edited]
   workflow_dispatch:
 
 jobs:
@@ -41,5 +41,5 @@ jobs:
         run: python setup.py sdist bdist_wheel
 
       - name: Publish with twine
-        run: python -m twine uplaod --repository-url https://upload.pypi.org/legacy/ dist/* --username ${{PYPI_USERNAME}}  --password ${{secrets.PYPI_PASSWORD}}
+        run: python -m twine uplaod --repository-url https://upload.pypi.org/legacy/ dist/* --username ${{secrets.PYPI_USERNAME}}  --password ${{secrets.PYPI_PASSWORD}}
     
