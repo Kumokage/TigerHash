@@ -1,12 +1,15 @@
 from setuptools import find_packages, setup
-from distutils.core import Extension
-from Cython.Distutils import build_ext
 from Cython.Build import cythonize
+
+with open("README.md", "r", encoding="utf-8") as fh:
+    long_description = fh.read()
 
 setup(
     name='tigerhash',
-    version='0.1.0',
-    description='Here you can find Python3 lib with different hash structs for CDC task.',
+    version='0.1.1',
+    description='Implementation of tiger hash in C++ with Python API. ',
+    long_description=long_description,
+    long_description_content_type="text/markdown",
     author='Alex Glushko',
     author_email='aglushko@hse.ru',
     url='https://github.com/Badcat330/TigerHash',
