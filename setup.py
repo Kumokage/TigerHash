@@ -1,4 +1,7 @@
 from setuptools import find_packages, setup
+from distutils.core import Extension
+from Cython.Distutils import build_ext
+from Cython.Build import cythonize
 
 setup(
     name='tigerhash',
@@ -20,4 +23,5 @@ setup(
     setup_requires=['pytest-runner'],
     tests_require=['pytest==4.4.1'],
     test_suite='tests',
+    ext_modules=cythonize("tigerhash/tigerhash.pyx", language="c++"),
 )

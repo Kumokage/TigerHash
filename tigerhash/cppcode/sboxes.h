@@ -8,7 +8,7 @@
 #include <bitset>
 
 namespace sboxes {
-    using word64 = unsigned long long int;
+    typedef unsigned long long int word64;
 
     word64 t1[256] = {
             0x02AAB17CF7E90C5E, 0xAC424B03E243A8EC,

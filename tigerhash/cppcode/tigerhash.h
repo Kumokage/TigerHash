@@ -6,10 +6,11 @@
 #define TIGERHASH_TIGERHASH_H
 
 #include <sstream>
+#include <iostream>
 #include "sboxes.h"
 
 namespace tiger {
-    using word64 = unsigned long long int;
+    typedef unsigned long long int word64;
 
     // Variables for computing hash
     word64 _a;
@@ -29,10 +30,10 @@ namespace tiger {
         cc = _c;
     }
 
-    void round(word64& a, word64& b, word64& c, char index, char mul) {
+    void round(word64& a, word64& b, word64& c, unsigned int index, char mul) {
         std::string c_str = std::bitset<64>(c).to_string();
         unsigned char c_arr[8];
-        for(int i = 0, j = 7; i < c_str.length(); i+=8, --j) {
+        for(std::size_t i = 0, j = 7; i < c_str.length(); i+=8, --j) {
             c_arr[j] = (unsigned char)std::bitset<8>(c_str.substr(i, 8)).to_ulong();
         }
 
@@ -99,13 +100,12 @@ namespace tiger {
             value = char(0) + value;
         }
 
-        for(int k = 0; k < value.length(); k += 64) {
+        for(std::size_t k = 0; k < value.length(); k += 64) {
 
             std::string buf_str = value.substr(k, 64);
-            std::string bit_str;
 
-
-            for(int i = 0, j = 7; i < buf_str.length(); i+=8, --j) {
+            for(std::size_t i = 0, j = 7; i < buf_str.length(); i+=8, --j) {
+                std::string bit_str;
                 std::string str_word = buf_str.substr(i, 8);
                 for (int n = 0; n < 8; ++n) {
                     bit_str += std::bitset<8>(str_word[n]).to_string();
