@@ -96,6 +96,10 @@ namespace tiger {
         _b = 0xFEDCBA9876543210;
         _c = 0xF096A5B4C3B2E187;
 
+        aa = 0;
+        bb = 0;
+        cc = 0;
+
         while(value.length() % 64 != 0) {
             value = char(0) + value;
         }

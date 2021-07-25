@@ -1,39 +1,36 @@
 import cython
 from libcpp.string cimport string
+from typing import Final
+
 
 cdef extern from "cppcode/tigerhash.h" namespace "tiger":
     string hash(string value)
 
 class tigerhash(object):
 
-    def __init__(data=b''):
-        if hasattr(data, decode):
+    block_size: Final = 64
+    digest_size: Final = 24
+    name: Final = "tigerhash"
+
+    def __init__(self, data=b''):
+        if hasattr(data, 'decode'):
             self.data = data
             self.hash = hash(data)
         else:
             raise Exception("Incorrect argument")
 
-    def update(data):
-        if hasattr(data, decode):
+    def update(self, data):
+        if hasattr(data, 'decode'):
             self.data += data
-            self.hash = hash(data)
+            self.hash = hash(self.data)
         else:
             raise Exception("Incorrect argument")
 
-    def digest():
-        return bytearray.fromhex(self.hash)
+    def digest(self):
+        return bytearray.fromhex(self.hash.decode('utf-8'))
 
-    def hexdigest():
-        return self.hash
+    def hexdigest(self):
+        return self.hash.decode('utf-8')
 
-    def copy():
+    def copy(self):
         return tigerhash(self.data)
-
-    def name():
-        return "tigerhash"
-
-    def block_size():
-        return 64
-
-    def digest_size():
-        return 24
