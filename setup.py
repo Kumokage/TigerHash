@@ -6,7 +6,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name='tigerhash',
-    version='0.1.1',
+    version='0.2.0',
     description='Implementation of tiger hash in C++ with Python API. ',
     long_description=long_description,
     long_description_content_type="text/markdown",
