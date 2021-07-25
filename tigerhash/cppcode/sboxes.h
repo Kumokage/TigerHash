@@ -1,4 +1,5 @@
 //
+// This file is a part of tigerhash project. 
 // Created by Alex Glushko on 11.07.2021.
 //
 
@@ -10,6 +11,7 @@
 namespace sboxes {
     typedef unsigned long long int word64;
 
+    // Array of sboxes which contain 64 bit values for computing tiger hash
     word64 t1[256] = {
             0x02AAB17CF7E90C5E, 0xAC424B03E243A8EC,
             0x72CD5BE30DD5FCD3, 0x6D019B93F6F97F3A,
