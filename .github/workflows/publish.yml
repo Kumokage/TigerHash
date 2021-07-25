@@ -39,6 +39,6 @@ jobs:
 
       - name: Publish with twine
         run: |
-        python -m twine upload --repository-url https://upload.pypi.org/legacy/ dist/* --username ${{secrets.PYPI_USERNAME}}  --password ${{secrets.PYPI_PASSWORD}}
-        python -m twine uplaod --repository-url https://test.pypi.org/legacy/ dist/* --username ${{secrets.PYPI_USERNAME}}  --password ${{secrets.PYPI_PASSWORD}}
+          python -m twine upload --repository-url https://upload.pypi.org/legacy/ dist/* --username ${{secrets.PYPI_USERNAME}}  --password ${{secrets.PYPI_PASSWORD}}
+          python -m twine uplaod --repository-url https://test.pypi.org/legacy/ dist/* --username ${{secrets.PYPI_USERNAME}}  --password ${{secrets.PYPI_PASSWORD}}
     
