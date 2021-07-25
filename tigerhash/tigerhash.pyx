@@ -12,9 +12,8 @@ import cython
 from libcpp.string cimport string
 from typing import Final
 
-
+# C++ hash function mapping
 cdef extern from "cppcode/tigerhash.h" namespace "tiger":
-    """ C++ hash function mapping """
     string hash(string value)
 
 class tigerhash(object):
